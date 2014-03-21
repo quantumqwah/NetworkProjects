@@ -26,7 +26,7 @@ using namespace std;
 void PreferentialTreatment( simplegraph g,  double& Kexp, int& N, bool& debugon)
 {
 
-	for( int maxtime=100; maxtime <=1000000; maxtime*=10)
+	for( int maxtime=100; maxtime <=10000000; maxtime*=10)
 	{
 	int m=3;
 		   // start by defining an empty graph 
@@ -87,10 +87,10 @@ for ( int index=0; index< g.getNumberVertices() ; index++)
 	}
 }
 
-int numberk=0;
-for( int k=1; k < maxindex ; k++)
-{
 
+for( int k=3; k < maxindex ; k++)
+{
+	int numberk=0;
 	for (int i=0; i < g.getNumberVertices(); i++)
 	{
 	   if( k ==g.getVertexDegree(i))
@@ -98,10 +98,10 @@ for( int k=1; k < maxindex ; k++)
 		   numberk++;
 	   }
 
-	   degreedis << k << '\t' << numberk << endl;
+	  
      }
 
-
+	 degreedis << k << '\t' << numberk << endl;
 }
 	}
 }
